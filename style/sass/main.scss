@@ -1,13 +1,12 @@
-@import 'Utilities/darkthemevariables.scss';
-@import 'Utilities/lighthemevariables.scss';
-@import 'Utilities/variables.scss';
-@import 'Quarks/general.scss';
-@import 'Atoms/buttons.scss';
-@import 'Molecules/grid.scss';
-@import 'Molecules/header.scss';
-@import 'Molecules/search.scss';
-@import 'Molecules/suggested.scss';
-@import 'Molecules/howtorecord.scss';
-@import 'Molecules/record.scss';
-@import 'Molecules/uploadgeneral.scss';
-@import 'Molecules/general.scss';
+@import 'abstracts/variables';
+
+@import 'base/base', 'base/reset';
+
+@import 'themes/dark', 'themes/light';
+
+@import 'layout/navigation', 'layout/grid', 'layout/search', 'layout/header';
+
+@import 'components/buttons', 'components/howtorecord', 'components/record',
+  'components/suggested', 'components/uploadgeneral';
+
+

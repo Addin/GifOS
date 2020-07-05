@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Shadows+Into+Light+Two&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=IBM+Plex+Mono&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://kit.fontawesome.com/56ad3d9948.js"></script>
+    <link
+      href="https://fonts.googleapis.com/css?family=Chakra+Petch&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" type="text/css" href="./style/css/style.css" />
+
+    <script src="https://www.WebRTC-Experiment.com/RecordRTC.js"></script>
+
+    <script src="/js/classes.js"></script>
+    <script src="/js/functions.js"></script>
+    <script src="/js/script-general.js"></script>
+    <script src="/js/upload.js"></script>
+
+    <title>Gif Upload Secction</title>
+  </head>
+
+  <body class="light">
+    <section class="welcome">
+      <p>
+        ¡Bienvenidos/as a Guifos!!! ------- Donde los gifs están ////// Número
+        de visitas: 12.765.803
+      </p>
+    </section>
+    <div class="container">
+      <header class="header">
+        <nav class="header--navbar">
+          <div class="logodiv">
+            <img
+              id="header--navbar--arrow"
+              class="header--navbar--logo"
+              src="images/arrow.svg"
+              alt="arrow home icon"
+            />
+            <img
+              id="header--navbar--logo"
+              class="header--navbar--logo"
+              src="images/gifOF_logo.png"
+              alt="gifs logo"
+            />
+          </div>
+          <ul id="header--navbar--menu" class="header--navbar--menu">
+            <li>
+              <button id="uploadButton" class="button--primary">
+                Crear Guifos
+              </button>
+            </li>
+            <li>
+              <div class="choosethemediv">
+                <button id="choosethemeA" class="button--primary">
+                  Elegir Tema
+                </button>
+                <button id="choosethemeB" class="button--primary">
+                  <img src="/images/dropdown.svg" alt="dropdown icon" />
+                </button>
+              </div>
+              <div id="themesdiv" class="themesdiv">
+                <button id="light-theme-button" class="button--gray">
+                  Sailor Day
+                </button>
+                <button id="dark-theme-button" class="button--gray">
+                  Sailor Night
+                </button>
+              </div>
+            </li>
+
+            <li>
+              <button id="myGifsButton" class="button--transparentsmall">
+                Mis Guifos
+              </button>
+            </li>
+          </ul>
+        </nav>
+      </header>
+
+      <section id="howtorecorddiv" class="howtorecord">
+        <h2>Crear Gifos</h2>
+        <div class="howtorecord--content">
+          <img
+            class="howtorecord--image"
+            src="images/window img.png"
+            alt="windows icon"
+          />
+          <div class="howtorecord--text">
+            <h3>Aquí podrás crear tus propios guifos</h3>
+            <p>
+              Crear tu <b>guifo</b> es muy fácil, graba cualquier imagen con tu
+              cámara y obtén guifos personalizados. Los pasos para crear tu
+              guifo son:
+            </p>
+            <p>
+              <b>1)</b> Dar permisos de acceso a la cámara (solo por el tiempo
+              de uso)
+            </p>
+            <p><b>2)</b> Capturar tu momento guifo</p>
+            <p><b>3)</b> Revisar el momento</p>
+            <p><b>4)</b> Listo para subir y compartir!</p>
+            <p>¿Quieres comenzar a subir tu <b>guifo</b> ahora?</p>
+          </div>
+        </div>
+        <div class="howtorecord--buttons">
+          <button class="button--secondarywhite">Cancelar</button>
+          <button id="continuebutton" class="button--secondary">
+            Continuar
+          </button>
+        </div>
+      </section>
+
+      <section id="recorddiv" class="record">
+        <h2>Un chequeo antes de empezar</h2>
+        <div class="record--content">
+          <video id="uploadvideo" class="record--video"></video>
+          <div
+            class="record--buttons record--buttons--record"
+            id="record--buttons--record"
+          >
+            <button class="button--secondary record--buttonicon">
+              <i class="fas fa-camera"></i>
+            </button>
+            <button id="record--buttonrecord" class="button--secondary">
+              Capturarr
+            </button>
+          </div>
+          <div
+            class="record--buttons record--buttons--stop"
+            id="record--buttons--stop"
+          >
+            <input placeholder="0000000" />
+            <div>
+              <button class="button--orange record--buttonicon">
+                <i class="far fa-clock"></i>
+              </button>
+              <button id="record--buttonstop" class="button--orange">
+                Listo
+              </button>
+            </div>
+          </div>
+          <div
+            class="record--buttons record--buttons--upload"
+            id="record--buttons--upload"
+          >
+            <div>
+              <input placeholder="0000000" />
+            </div>
+            <div>
+              <button id="record--buttonrepeat" class="button--secondarywhite">
+                Repetir Captura
+              </button>
+              <button id="record--buttonupload" class="button--secondary">
+                Subir Gifo
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="mygifs">
+        <input placeholder="Mis Guifos:" required />
+        <div id="gifsresultsgrid" class="gifsgrid"></div>
+      </section>
+    </div>
+  </body>
+</html>

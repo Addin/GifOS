@@ -72,35 +72,38 @@
   }
 }
 
-&--primary {
-  background-color: $pink;
-  color: $color-primary;
-}
-&--transparentsmall {
-  color: $color-primary;
-}
-&--blue {
-  background-color: $gradient-blue;
-}
+.light .button {
+  &--primary {
+    background-color: $pink;
+    color: $color-primary;
+  }
+  &--transparentsmall {
+    color: $color-primary;
+  }
+  &--blue {
+    background-color: $gradient-blue;
+  }
 
-&--secondary {
-  background-color: $pink;
-  color: $color-primary;
-}
+  &--secondary {
+    background-color: $pink;
+    color: $color-primary;
+  }
 
-&--secondarywhite {
-  background-color: $color-secondary;
-  color: $color-primary;
-}
+  &--secondarywhite {
+    background-color: $color-secondary;
+    color: $color-primary;
+  }
 
-&--gray {
-  background-color: $color-windows-lighter;
-  border: $color-windows-darker 0.5px solid;
-}
+  &--gray {
+    background-color: $color-windows-lighter;
+    border: $color-windows-darker 0.5px solid;
+  }
 
-&--grayactive {
-  background-color: $lightpink;
-  border: $activepink 1px solid;
+  &--grayactive {
+    background-color: $lightpink;
+    //  border: 0;
+    border: $activepink 1px solid;
+  }
 }
 
 .dark .button {

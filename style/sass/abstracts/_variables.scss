@@ -6,7 +6,6 @@ $color-windows-lighter-hover: #dbdbdb;
 $color-windows-darker: #818181;
 $color-windows-darkerborder: #b4b4b4;
 $color-orange: #ff6161;
-
 $font-primary: 'Chakra Petch', sans-serif;
 
 @mixin box-shadow($x, $y, $blur, $spread, $color) {
@@ -15,8 +14,6 @@ $font-primary: 'Chakra Petch', sans-serif;
   -ms-box-shadow: $x $y $blur $spread $color;
   box-shadow: $x $y $blur $spread $color;
 }
-
-//@include box-shadow(0px, 0px, 0px, 4px, #fff);
 
 @mixin border-radius($radius) {
   -webkit-border-radius: $radius;
