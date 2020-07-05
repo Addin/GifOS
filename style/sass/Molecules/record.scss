@@ -1,0 +1,38 @@
+#recorddiv {
+  display: none;
+}
+
+.record {
+  &--content {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &--buttons {
+    width: 100%;
+    margin-top: 20px;
+
+    &--record {
+      text-align: right;
+    }
+
+    &--stop {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    &--upload {
+      display: flex;
+      justify-content: space-between;
+
+      button {
+        width: 130px;
+      }
+    }
+  }
+
+  .record--buttonicon {
+    width: 40px;
+  }
+}

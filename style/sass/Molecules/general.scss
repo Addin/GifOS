@@ -1,0 +1,22 @@
+#suggested,
+#gifsresults,
+#mygifs {
+  text-align: center;
+  input {
+    width: 99%;
+    height: 30px;
+    border: 1.5px $color-windows-darker solid;
+    border-bottom: 1.5px $color-windows solid;
+    border-right: 1.5px $color-windows solid;
+    @include box-shadow(0px, 0px, 0px, 1.5px, $pink);
+  }
+}
+
+#suggested {
+  margin-top: 100px;
+}
+
+#gifsresults {
+  margin-top: 40px;
+  padding-top: 20px;
+}

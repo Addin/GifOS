@@ -1,0 +1,102 @@
+.search {
+  position: relative;
+  width: 100%;
+  text-align: left;
+
+  &--main {
+    border: 1px white solid;
+    border-bottom: 1px $color-windows-darkerborder solid;
+    border-right: 1px $color-windows-darkerborder solid;
+
+    &--title {
+      padding-left: 5px;
+      font-size: 14px;
+      color: $color-secondary;
+    }
+
+    &--content {
+      padding: 10px;
+      height: 70px;
+      display: flex;
+      align-items: center;
+
+      input {
+        text-align: left;
+        padding-left: 5px;
+        margin-right: 10px;
+        background: white;
+        border: 1px black solid;
+        border-bottom: 1px $color-windows-darker solid;
+        border-right: 1px $color-windows-darker solid;
+        width: 100%;
+        height: 45px;
+
+        @include box-shadow(0px, 0px, 0px, 0.5px, $color-windows-darker);
+      }
+
+      button {
+        padding: 0.5rem 0;
+        display: flex;
+        justify-content: center;
+        margin-top: 0px;
+
+        #buttonicon {
+          opacity: 0.3;
+          margin-right: 0.5rem;
+        }
+      }
+    }
+  }
+
+  &--suggested {
+    position: absolute;
+    display: none;
+    padding: 9px 8px 9px 8px;
+
+    width: 100%;
+    z-index: 99;
+
+    border: 1px white solid;
+    border-bottom: 1px $color-windows-darkerborder solid;
+    border-right: 1px $color-windows-darkerborder solid;
+
+    li {
+      margin-bottom: 2px;
+      height: 70px;
+      display: flex;
+      align-items: center;
+      height: 45px;
+    }
+
+    button {
+      background: $color-windows-lighter;
+      padding-left: 5px;
+      text-align: left;
+      height: 36px;
+      width: 100%;
+      border: 1px $color-windows-darker solid;
+      border-bottom: 1px $color-windows-darkerborder solid;
+      border-right: 1px $color-windows-darkerborder solid;
+
+      &:hover {
+        background: $color-windows-lighter-hover;
+        outline: 0.5px dotted black;
+        outline-offset: -4px;
+      }
+    }
+  }
+
+  &--lastsearchs {
+    padding-top: 14px;
+    position: absolute;
+    z-index: 9;
+    display: none;
+
+    button {
+      display: none;
+      width: auto;
+      margin-right: 10px;
+      margin-left: 2px;
+    }
+  }
+}

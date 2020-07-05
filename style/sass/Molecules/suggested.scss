@@ -1,0 +1,23 @@
+#suggested {
+  .gifcontainer {
+    &:hover {
+      .gif {
+        outline: 0.3px dashed $color-windows-darker;
+        outline-offset: -5px;
+      }
+    }
+
+    .gif {
+      height: 220px;
+    }
+
+    button {
+      display: block;
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      margin: 10px;
+      padding: 5px 8px 5px 8px;
+    }
+  }
+}
