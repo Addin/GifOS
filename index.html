@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Shadows+Into+Light+Two&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=IBM+Plex+Mono&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Chakra+Petch&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://kit.fontawesome.com/56ad3d9948.js"></script>
+    <link rel="stylesheet" type="text/css" href="styles/styles.css" />
+    <title>Document</title>
+  </head>
+  <body class="light">
+    <section class="welcome">
+      <div>
+        <p>
+          ¡Bienvenidos/as a Guifos!!! ------- Donde los gifs están ////// Número
+          de visitas: 12.765.803
+        </p>
+      </div>
+    </section>
+
+    <div class="container">
+      <header class="header">
+        <nav class="header--navbar">
+          <img
+            id="header--navbar--logo"
+            class="header--navbar--logo"
+            src="assets/gifOF_logo.png"
+            alt="GifOS logo"
+          />
+
+          <ul class="header--navbar--menu">
+            <li>
+              <button id="uploadButton" class="button--primary">
+                Crear Guifos
+              </button>
+            </li>
+            <li>
+              <div id="choosethemediv" class="choosethemediv">
+                <button id="chooseThemeButtonA" class="button--primary">
+                  Elegir Tema
+                </button>
+                <button id="chooseThemeButtonB" class="button--primary">
+                  <i class="fas fa-caret-down"></i>
+                </button>
+              </div>
+              <div id="themesdiv" class="themesdiv">
+                <button
+                  id="light-theme-button"
+                  class="button--gray button--grayactive"
+                >
+                  Sailor Day
+                </button>
+                <button id="dark-theme-button" class="button--gray">
+                  Sailor Night
+                </button>
+              </div>
+            </li>
+
+            <li>
+              <button id="myGifsButton" class="button--transparentsmall">
+                Mis Guifos
+              </button>
+            </li>
+          </ul>
+        </nav>
+      </header>
+      <section id="search" class="search">
+        <div class="search--main">
+          <h2 class="search--main--title">Buscar</h2>
+          <div class="search--main--content">
+            <input
+              id="search--input"
+              name="search--input"
+              placeholder="Busca gifs, hashtags, temas, busca lo que quieras.."
+              required
+            />
+            <button id="search--button" class="button--transparent" disabled>
+              <img
+                src="/assets/lupa.svg"
+                alt="Magnifier logo"
+                id="buttonicon"
+              />
+              Buscar
+            </button>
+          </div>
+        </div>
+
+        <ul id="search--suggested" class="search--suggested">
+          <li>
+            <button class="suggestedButtons searchButtons">Aveng</button>
+          </li>
+          <li>
+            <button class="suggesdButtons searchButtons">B</button>
+          </li>
+          <li>
+            <button class="suggesdButtons searchButtons">C</button>
+          </li>
+        </ul>
+        <div id="search--lastsearchs" class="search--lastsearchs">
+          <button
+            class="searchButtons button--blue"
+            id="searchresult2"
+          ></button>
+          <button
+            class="searchButtons button--blue"
+            id="searchresult1"
+          ></button>
+          <button
+            class="searchButtons button--blue"
+            id="searchresult0"
+          ></button>
+        </div>
+      </section>
+
+      <section id="suggested">
+        <input placeholder="Hoy te sugerimos.." required />
+
+        <div id="suggestedgifsgrid" class="gifsgrid">
+          <div class="gifcontainer suggestedgifcontainer">
+            <header class="giftext">
+              <p>#SuperHeros</p>
+              <img src="/assets/button3.svg" />
+            </header>
+            <img
+              class="gif"
+              src="https://media2.giphy.com/media/EszhFgRBRLFok/200.gif?cid=a09d884aca6812ff21dce7cd4ded1a712fbd590bb46f6dc9&rid=200.gif"
+            />
+            <button class="button--blue button--seemore" name="superheroes">
+              Ver más...
+            </button>
+          </div>
+          <div class="gifcontainer suggestedgifcontainer">
+            <header class="giftext">
+              <p>#Pets</p>
+              <img src="/assets/button3.svg" />
+            </header>
+
+            <img
+              class="gif"
+              src="https://media0.giphy.com/media/9GIFGeuuinRxgEj7Zq/200.gif?cid=a09d884a79a5fa42d7ec56ca2e131bf0ebdaab65c8ac4967&rid=200.gif"
+            />
+            <button class="button--blue button--seemore" name="pets">
+              Ver más...
+            </button>
+          </div>
+          <div class="gifcontainer suggestedgifcontainer">
+            <header class="giftext">
+              <p>#Fantasy</p>
+              <img src="/assets/button3.svg" />
+            </header>
+
+            <img
+              class="gif"
+              src="https://media1.giphy.com/media/d88tKlampLOqdCOnad/200.gif?cid=a09d884ac6f1bd8d4e64744a58169f0475e80e46248b3cbf&rid=200.gif"
+            />
+            <button class="button--blue button--seemore" name="fantasy">
+              Ver más...
+            </button>
+          </div>
+          <div class="gifcontainer suggestedgifcontainer">
+            <header class="giftext">
+              <p>#Anime</p>
+              <img src="/assets/button3.svg" />
+            </header>
+
+            <img
+              class="gif"
+              src="https://media3.giphy.com/media/tIZUToOMEFGM0/200.gif?cid=a09d884ae4e8f64daf299fae002b17947ab5754f415c2aa1&rid=200.gif"
+            />
+            <button class="button--blue button--seemore" name="shonen">
+              Ver más...
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section id="gifsresults">
+        <input id="gifsresultsinput" placeholder="Tendencias:" required />
+        <div id="gifsresultsgrid" class="gifsgrid"></div>
+      </section>
+    </div>
+
+    <script src="https://www.WebRTC-Experiment.com/RecordRTC.js"></script>
+    <script src="./js/classes.js"></script>
+    <script src="./js/functions.js"></script>
+    <script src="./js/scripts-general.js"></script>
+    <script src="./js/scripts-index.js"></script>
+  </body>
+</html>
