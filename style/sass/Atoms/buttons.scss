@@ -1,0 +1,140 @@
+%button {
+  padding: 0.5rem 0.7rem;
+  text-decoration: none;
+  font-family: $font-primary;
+  width: 120px;
+
+  &:hover {
+    outline: 0.3px dotted black;
+    outline-offset: -5px;
+  }
+}
+
+.button {
+  &--primary {
+    @extend %button;
+    @include box-shadow(0px, 0px, 0px, 1px, black);
+  }
+
+  &--secondary {
+    @extend %button;
+    background-color: $color-secondary;
+    @include box-shadow(0px, 0px, 0px, 1px, black);
+  }
+
+  &--secondarywhite {
+    @extend %button;
+    background-color: $color-secondary;
+    @include box-shadow(0px, 0px, 0px, 1px, black);
+  }
+
+  &--blue {
+    @extend %button;
+    color: $color-secondary;
+    width: 80px;
+    @include box-shadow(0px, 0px, 0px, 1px, $darkblue);
+  }
+  &--orange {
+    @extend %button;
+    background-color: $color-orange;
+    color: $color-secondary;
+    @include box-shadow(0px, 0px, 0px, 1px, black);
+  }
+
+  &--transparent {
+    @extend %button;
+    background-color: Transparent;
+    @include box-shadow(0px, 0px, 0px, 1px, black);
+  }
+
+  &--transparentsmall {
+    text-align: left;
+    width: 100px;
+    background-color: Transparent;
+    border-color: Transparent;
+    @extend %button;
+    &:hover {
+      outline-offset: -3px;
+    }
+  }
+
+  &--gray {
+    text-align: left;
+    width: 143px;
+    margin: 6px;
+    @extend %button;
+  }
+
+  &--primaryactive {
+    background: $activepink;
+    outline: 0.3px dashed $color-windows-darker;
+    outline-offset: -5px;
+  }
+}
+
+&--primary {
+  background-color: $pink;
+  color: $color-primary;
+}
+&--transparentsmall {
+  color: $color-primary;
+}
+&--blue {
+  background-color: $gradient-blue;
+}
+
+&--secondary {
+  background-color: $pink;
+  color: $color-primary;
+}
+
+&--secondarywhite {
+  background-color: $color-secondary;
+  color: $color-primary;
+}
+
+&--gray {
+  background-color: $color-windows-lighter;
+  border: $color-windows-darker 0.5px solid;
+}
+
+&--grayactive {
+  background-color: $lightpink;
+  border: $activepink 1px solid;
+}
+
+.dark .button {
+  &--primary {
+    background-color: $darkgradient-pink;
+    color: $color-secondary;
+  }
+
+  &--transparentsmall {
+    color: $color-secondary;
+  }
+
+  &--blue {
+    background-color: $darkblue;
+  }
+
+  &--secondary {
+    background-color: $darkpink;
+    color: $color-secondary;
+  }
+
+  &--secondarywhite {
+    background-color: $darkpink;
+    color: $color-secondary;
+  }
+
+  &--gray {
+    background-color: $darkcolor-activebutton;
+    border: $color-windows-darker 1px solid;
+  }
+
+  &--grayactive {
+    background-color: $darkblue;
+    border: white 1px solid;
+    color: white;
+  }
+}

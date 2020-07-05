@@ -2,4 +2,49 @@ $pink: #f7c9f3;
 $lightpink: #fff4fd;
 $activepink: #e6bbe2;
 $gradient-blue: #4d85f5;
-$gra: #f6c8f3;
+$gradient-pink: #f6c8f3;
+
+%gradient {
+  background: $gradient-pink;
+  background: -webkit-linear-gradient(to right, $gradient-blue, $gradient-pink);
+  background: linear-gradient(to right, $gradient-blue, $gradient-pink);
+}
+
+.light {
+  background-color: $lightpink;
+  color: $color-primary;
+
+  .welcome {
+    @extend %gradient;
+  }
+
+  .themesdiv {
+    background-color: $color-windows;
+  }
+
+  .gifcontainer {
+    .giftext {
+      @extend %gradient;
+    }
+  }
+
+  .search {
+    h2 {
+      @extend %gradient;
+    }
+    &--main {
+      background: $color-windows;
+    }
+    &--suggested {
+      background: $color-windows;
+    }
+  }
+
+  .howtorecord,
+  .record {
+    background-color: $color-windows;
+    h2 {
+      @extend %gradient;
+    }
+  }
+}

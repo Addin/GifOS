@@ -1,2 +1,57 @@
 $darkcolor-primary: #fff;
 $darkcolor-secondary: #2f333c;
+$darkcolor-windows: #b4b4b4;
+$darkcolor-activebutton: #cccccc;
+$darkpink: #110038;
+$darkblue: #2e32fb;
+$darkgradient-blue: #2f32fb;
+$darkgradient-pink: #eb3efe;
+%darkgradient {
+  background: $darkgradient-pink;
+  background: -webkit-linear-gradient(
+    to right,
+    $darkgradient-blue,
+    $darkgradient-pink
+  );
+  background: linear-gradient(to right, $darkgradient-blue, $darkgradient-pink);
+}
+
+.dark {
+  background-color: $darkpink;
+  color: $darkcolor-primary;
+
+  .welcome {
+    @extend %darkgradient;
+  }
+
+  .themesdiv {
+    background-color: $darkcolor-windows;
+  }
+
+  .gifcontainer {
+    .giftext {
+      @extend %darkgradient;
+    }
+  }
+
+  .search {
+    h2 {
+      @extend %darkgradient;
+    }
+    &--main {
+      background: $darkcolor-windows;
+    }
+    &--suggested {
+      background: $darkcolor-windows;
+    }
+  }
+
+  .howtorecord,
+  .record {
+    background-color: $darkcolor-windows;
+
+    h2 {
+      @extend %darkgradient;
+    }
+  }
+}
