@@ -1,27 +1,4 @@
 const API_KEY = 'YZfBJcINwzLE6Fy7ISxAjUgR1Ou4RJfi';
-const renderGifs = (gifs, container, search) => {
-  let template = '';
-
-  for (let gif of gifs) {
-    let classs = 'gif';
-
-    if (gif.images.original.width / gif.images.original.height >= 2) {
-      classs = 'giflarge';
-    } else {
-      classs = 'gif';
-    }
-    template += ` 
-   
-        <div class="gifcontainer">
-            <img class="${classs}" src="${gif.images.original.url}">      
-            <footer class="giftext">
-                <p>${getHashtags(gif, search)}</p>
-            </footer>
-        </div>
-        `;
-  }
-  container.innerHTML = template;
-};
 
 let getHashtags = (gif, search) => {
   let hashtags = '';
@@ -119,9 +96,7 @@ const saveSearchs = (search) => {
 const getStream = async (video) => {
   let constraints = {
     audio: false,
-    video: {
-      height: { max: 480 },
-    },
+    video: true,
   };
   navigator.mediaDevices
     .getUserMedia(constraints)
@@ -149,4 +124,35 @@ const funcionprueba = async (stream) => {
   });
 
   recorder.startRecording();
+};
+
+let arrayMyGIfs = [];
+
+const saveMyGyfs = (gifID) => {
+  if (localStorage.getItem('arrayMyGifs') == null) {
+    arrayMyGIfs.push(gifID);
+  } else {
+    arrayMyGIfs = localStorage.getItem('arrayMyGifs').split(',');
+    arrayMyGIfs.push(gifID);
+  }
+
+  localStorage.setItem('arrayMyGifs', arrayMyGIfs.join());
+};
+
+const GIFBYID_URL = 'https://api.giphy.com/v1/gifs?';
+
+const getMyGifs = (container) => {
+  let gifs = localStorage.getItem('arrayMyGifs');
+
+  fetch(GIFBYID_URL + 'api_key=' + API_KEY + '&ids=' + gifs)
+    .then((res) => {
+      return res.json();
+    })
+    .then((res) => {
+      console.log(res);
+      renderGifs(res.data, container, 'MyGifs');
+    })
+    .catch((error) => {
+      console.log(error);
+    });
 };

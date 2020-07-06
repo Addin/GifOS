@@ -65,11 +65,11 @@ input {
 
 #suggested,
 #gifsresults,
-#mygifs {
+#gifresults {
   text-align: center; }
   #suggested input,
   #gifsresults input,
-  #mygifs input {
+  #gifresults input {
     width: 99%;
     height: 30px;
     border: 1.5px #818181 solid;
@@ -85,7 +85,8 @@ input {
 
 #gifsresults {
   margin-top: 40px;
-  padding-top: 20px; }
+  padding-top: 20px;
+  margin-bottom: 50px; }
 
 .gifsgrid {
   display: flex;
@@ -121,17 +122,14 @@ input {
       height: 245px;
       background: #f6c8f3; }
 
-#gifsresults .gifsgrid .gifcontainer footer {
+#gifsresults .gifsgrid .gifcontainer footer, #migifs .gifsgrid .gifcontainer footer {
   position: absolute;
   bottom: 0;
   width: 100%;
   display: none !important; }
 
-#gifsresults .gifsgrid .gifcontainer:hover footer {
+#gifsresults .gifsgrid .gifcontainer:hover footer, #migifs .gifsgrid .gifcontainer:hover footer {
   display: block !important; }
-
-#mygifs {
-  margin-top: 40px; }
 
 .search {
   position: relative;
@@ -381,19 +379,6 @@ input {
   border: white 1px solid;
   color: white; }
 
-howtorecord p {
-  margin-bottom: 5px; }
-
-howtorecord img {
-  margin-right: 20px; }
-
-howtorecord--buttons {
-  padding: 0 30px 30px 30px;
-  display: flex;
-  justify-content: flex-end; }
-  howtorecord--buttons button {
-    margin-left: 20px; }
-
 #recorddiv {
   display: none; }
 
@@ -434,6 +419,29 @@ howtorecord--buttons {
   margin: 10px;
   padding: 5px 8px 5px 8px; }
 
+.howtorecord {
+  margin-top: 50px;
+  margin-bottom: 150px;
+  max-width: 700px; }
+  .howtorecord--content {
+    margin: 30px;
+    display: flex;
+    align-items: flex-start; }
+  .howtorecord img {
+    margin-right: 30px;
+    margin-top: 5px; }
+  .howtorecord--text h3 {
+    font-weight: 1000;
+    margin-bottom: 10px; }
+  .howtorecord--text p {
+    margin-bottom: 5px; }
+  .howtorecord--buttons {
+    padding: 0 30px 30px 30px;
+    display: flex;
+    justify-content: flex-end; }
+    .howtorecord--buttons button {
+      margin-left: 20px; }
+
 .container {
   font-size: 15px; }
 
@@ -445,24 +453,14 @@ howtorecord--buttons {
 
 .howtorecord,
 .record {
-  margin-top: 60px;
   border: white solid 1px;
   border-right: #818181 solid 1px;
   border-bottom: solid 1px;
   color: #2f333c;
   margin: 0 auto;
-  text-align: left;
-  max-width: 700px; }
+  text-align: left; }
   .howtorecord h2,
   .record h2 {
     padding: 5px;
     font-size: 14px;
     color: #fff; }
-  .howtorecord--content,
-  .record--content {
-    padding: 30px;
-    display: flex;
-    align-items: flex-start; }
-  .howtorecord h3,
-  .record h3 {
-    font-weight: 1000; }

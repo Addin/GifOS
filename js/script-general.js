@@ -2,6 +2,7 @@ const bodyclass = sessionStorage.getItem('bodyclass');
 document.addEventListener('DOMContentLoaded', async () => {
   const body = document.querySelector('body');
   const logo = document.getElementById('header--navbar--logo');
+  const gifresultsgrid = document.getElementById('gifsresultsgrid');
 
   logo.addEventListener('click', () => {
     window.location.assign('index.html');
@@ -22,6 +23,8 @@ document.addEventListener('DOMContentLoaded', async () => {
     searchsection.style.display = 'none';
     suggestedsection.style.display = 'none';
     gifsresultsinput.value = 'Mis Gifos';
+    getMyGifs(gifresultsgrid);
+    gifsresultsinput.scrollIntoView();
   });
 
   if (bodyclass == 'light') {

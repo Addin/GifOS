@@ -1,24 +1,4 @@
 document.addEventListener('DOMContentLoaded', async () => {
-  let menu = document.getElementById('header--navbar--menu');
-  menu.style.display = 'none';
-  const logo = document.getElementById('header--navbar--arrow');
-
-  logo.addEventListener('click', () => {
-    window.location.assign('index.html');
-  });
-
-  const continuebutton = document.getElementById('continuebutton');
-
-  const howtorecorddiv = document.getElementById('howtorecorddiv');
-  const recorddiv = document.getElementById('recorddiv');
-
-  let video = document.getElementById('uploadvideo');
-  continuebutton.addEventListener('click', () => {
-    howtorecorddiv.style.display = 'none';
-    recorddiv.style.display = 'block';
-    getStream(video);
-  });
-
   let divbuttonsrecord = document.getElementById('record--buttons--record');
   let divbuttonsstop = document.getElementById('record--buttons--stop');
   let divbuttonsupload = document.getElementById('record--buttons--upload');

@@ -34,6 +34,7 @@
     <script src="/js/functions.js"></script>
     <script src="/js/script-general.js"></script>
     <script src="/js/upload.js"></script>
+    <script src="/js/scripts-upload-init-record.js"></script>
 
     <title>Gif Upload Secction</title>
   </head>
@@ -51,48 +52,16 @@
           <div class="logodiv">
             <img
               id="header--navbar--arrow"
-              class="header--navbar--logo"
-              src="images/arrow.svg"
+              src="/assets/arrow.svg"
               alt="arrow home icon"
             />
             <img
               id="header--navbar--logo"
               class="header--navbar--logo"
-              src="images/gifOF_logo.png"
-              alt="gifs logo"
+              src="/assets/gifOF_logo.png"
+              alt="GifOS logo"
             />
           </div>
-          <ul id="header--navbar--menu" class="header--navbar--menu">
-            <li>
-              <button id="uploadButton" class="button--primary">
-                Crear Guifos
-              </button>
-            </li>
-            <li>
-              <div class="choosethemediv">
-                <button id="choosethemeA" class="button--primary">
-                  Elegir Tema
-                </button>
-                <button id="choosethemeB" class="button--primary">
-                  <img src="/images/dropdown.svg" alt="dropdown icon" />
-                </button>
-              </div>
-              <div id="themesdiv" class="themesdiv">
-                <button id="light-theme-button" class="button--gray">
-                  Sailor Day
-                </button>
-                <button id="dark-theme-button" class="button--gray">
-                  Sailor Night
-                </button>
-              </div>
-            </li>
-
-            <li>
-              <button id="myGifsButton" class="button--transparentsmall">
-                Mis Guifos
-              </button>
-            </li>
-          </ul>
         </nav>
       </header>
 
@@ -101,7 +70,7 @@
         <div class="howtorecord--content">
           <img
             class="howtorecord--image"
-            src="images/window img.png"
+            src="/assets/window img.png"
             alt="windows icon"
           />
           <div class="howtorecord--text">
@@ -122,9 +91,14 @@
           </div>
         </div>
         <div class="howtorecord--buttons">
-          <button class="button--secondarywhite">Cancelar</button>
-          <button id="continuebutton" class="button--secondary">
-            Continuar
+          <button
+            class="howtorecord-cancerlbutton"
+            class="button--secondarywhite"
+          >
+            Cancelar
+          </button>
+          <button class="howtorecord-continuebutton" class="button--secondary">
+            Comenzar
           </button>
         </div>
       </section>
@@ -177,8 +151,8 @@
         </div>
       </section>
 
-      <section id="mygifs">
-        <input placeholder="Mis Guifos:" required />
+      <section id="gifsresults">
+        <input id="gifsresultsinput" placeholder="Mis Gifos:" required />
         <div id="gifsresultsgrid" class="gifsgrid"></div>
       </section>
     </div>
