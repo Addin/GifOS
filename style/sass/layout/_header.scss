@@ -4,7 +4,6 @@
   font-family: $font-primary;
   font-size: 13px;
   padding: 4px;
-
   div {
     margin: 0 auto;
   }
@@ -13,13 +12,11 @@
 .header--navbar {
   height: 100px;
   align-items: center;
-
   padding-left: 10px;
   padding-right: 10px;
   padding-top: 10px;
   padding-bottom: 10px;
   display: flex;
-
   justify-content: space-between;
 
   &--menu {
@@ -57,7 +54,6 @@
 @media only screen and (max-width: 550px) {
   .header {
     &--navbar {
-      // background-color: white;
       flex-direction: column;
       padding: 10px;
       height: auto;
