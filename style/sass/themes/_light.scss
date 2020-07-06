@@ -52,7 +52,6 @@ $gradient-pink: #f6c8f3;
   .uploading,
   .upload--done {
     background-color: $color-windows;
-
     header {
       @extend %gradient;
     }

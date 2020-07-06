@@ -9,6 +9,7 @@ $color-windows-darkerborder: #b4b4b4;
 $darkblue: #2e32fb;
 $darkgradient-blue: #2f32fb;
 $darkgradient-pink: #eb3efe;
+
 %darkgradient {
   background: $darkgradient-pink;
   background: -webkit-linear-gradient(
@@ -18,23 +19,29 @@ $darkgradient-pink: #eb3efe;
   );
   background: linear-gradient(to right, $darkgradient-blue, $darkgradient-pink);
 }
+
 .dark {
   background-color: $darkpinkbg;
   color: $darkcolor-primary;
+
   .welcome {
     @extend %darkgradient;
   }
+
   .themesdiv {
     background-color: $darkcolor-windows;
   }
+
   i {
     color: $color-white;
   }
+
   .gifcontainer {
     .giftext {
       @extend %darkgradient;
     }
   }
+
   .search {
     h2 {
       @extend %darkgradient;
@@ -44,6 +51,7 @@ $darkgradient-pink: #eb3efe;
     }
     &--suggested {
       background: $darkcolor-windows;
+
       button {
         background: $color-windows-lighter-hover;
       }
@@ -56,7 +64,6 @@ $darkgradient-pink: #eb3efe;
   .upload--done {
     background-color: $darkcolor-windows;
     color: $lightcolor-primary;
-
     i,
     b {
       color: $lightcolor-primary;
