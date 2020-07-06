@@ -1,28 +1,22 @@
 html {
-    scroll-behavior: smooth;
-    font-size: 16px;
-  }
-  
-  body {
-    font-family: $font-primary;
-    line-height: 1.6;
-  }
-  
-  a {
-    text-decoration: none;
-    color: $color-primary;
-  }
-  
-  li {
-    list-style: none;
-  }
-  
-  input {
-    font-family: $font-primary;
-  }
-  
-  .container {
-    max-width: 1030px;
-    margin: 0 auto;
-  }
-  
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: $font-primary;
+  line-height: 1.6;
+}
+
+li {
+  list-style: none;
+}
+
+input {
+  font-family: $font-primary;
+}
+
+.container {
+  max-width: 1030px;
+  margin: 0 auto;
+}
