@@ -20,21 +20,24 @@
       href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans&display=swap"
       rel="stylesheet"
     />
+    <script src="https://kit.fontawesome.com/56ad3d9948.js"></script>
     <link
       href="https://fonts.googleapis.com/css?family=Chakra+Petch&display=swap"
       rel="stylesheet"
     />
-    <script src="https://kit.fontawesome.com/56ad3d9948.js"></script>
-    <link rel="stylesheet" type="text/css" href="./style/css/style.css" />
-    <script src="https://www.WebRTC-Experiment.com/RecordRTC.js"></script>
 
+    <link rel="stylesheet" type="text/css" href="/style/css/style.css" />
+
+    <script src="https://www.WebRTC-Experiment.com/RecordRTC.js"></script>
     <script src="/js/classes.js"></script>
     <script src="/js/functions.js"></script>
-    <script src="/js/script-general.js"></script>
+    <script src="/js/scripts-general.js"></script>
     <script src="/js/scripts-index.js"></script>
-    <title>Document</title>
+
+    <title>Juan Romero's Gif's site</title>
   </head>
-  <body class="light">
+
+  <body class="">
     <section class="welcome">
       <div>
         <p>
@@ -50,8 +53,8 @@
           <img
             id="header--navbar--logo"
             class="header--navbar--logo"
-            src="assets/gifOF_logo.png"
-            alt="GifOS logo"
+            src="/assets/gifOF_logo.webp"
+            alt="gifs logo"
           />
 
           <ul class="header--navbar--menu">
@@ -63,7 +66,7 @@
             <li>
               <div id="choosethemediv" class="choosethemediv">
                 <button id="chooseThemeButtonA" class="button--primary">
-                  Elegir Tema
+                  Elegir tema
                 </button>
                 <button id="chooseThemeButtonB" class="button--primary">
                   <i class="fas fa-caret-down"></i>
@@ -72,11 +75,14 @@
               <div id="themesdiv" class="themesdiv">
                 <button
                   id="light-theme-button"
-                  class="button--gray button--grayactive"
+                  class="button--themes button--lighttheme"
                 >
                   Sailor Day
                 </button>
-                <button id="dark-theme-button" class="button--gray">
+                <button
+                  id="dark-theme-button"
+                  class="button--themes button--darktheme"
+                >
                   Sailor Night
                 </button>
               </div>
@@ -84,7 +90,7 @@
 
             <li>
               <button id="myGifsButton" class="button--transparentsmall">
-                Mis Guifos
+                <u>M</u>is Guifos
               </button>
             </li>
           </ul>
@@ -98,12 +104,13 @@
               id="search--input"
               name="search--input"
               placeholder="Busca gifs, hashtags, temas, busca lo que quieras.."
+              maxlength="50"
               required
             />
             <button id="search--button" class="button--transparent" disabled>
               <img
                 src="/assets/lupa.svg"
-                alt="Magnifier logo"
+                alt="search magnifier"
                 id="buttonicon"
               />
               Buscar
@@ -113,13 +120,13 @@
 
         <ul id="search--suggested" class="search--suggested">
           <li>
-            <button class="suggestedButtons searchButtons">Aveng</button>
+            <button class="suggestedButtons searchButtons">Funny</button>
           </li>
           <li>
-            <button class="suggesdButtons searchButtons">B</button>
+            <button class="suggesdButtons searchButtons">Nature</button>
           </li>
           <li>
-            <button class="suggesdButtons searchButtons">C</button>
+            <button class="suggesdButtons searchButtons">Science</button>
           </li>
         </ul>
         <div id="search--lastsearchs" class="search--lastsearchs">
@@ -139,7 +146,7 @@
       </section>
 
       <section id="suggested">
-        <input placeholder="Hoy te sugerimos.." required />
+        <p class="sectiontitle">Hoy te sugerimos...</p>
 
         <div id="suggestedgifsgrid" class="gifsgrid">
           <div class="gifcontainer suggestedgifcontainer">
@@ -147,10 +154,7 @@
               <p>#SuperHeros</p>
               <img src="/assets/button3.svg" />
             </header>
-            <img
-              class="gif"
-              src="https://media2.giphy.com/media/EszhFgRBRLFok/200.gif?cid=a09d884aca6812ff21dce7cd4ded1a712fbd590bb46f6dc9&rid=200.gif"
-            />
+            <img id="superheroesCategory" class="gif" />
             <button class="button--blue button--seemore" name="superheroes">
               Ver más...
             </button>
@@ -160,11 +164,7 @@
               <p>#Pets</p>
               <img src="/assets/button3.svg" />
             </header>
-
-            <img
-              class="gif"
-              src="https://media0.giphy.com/media/9GIFGeuuinRxgEj7Zq/200.gif?cid=a09d884a79a5fa42d7ec56ca2e131bf0ebdaab65c8ac4967&rid=200.gif"
-            />
+            <img id="petsCategory" class="gif" />
             <button class="button--blue button--seemore" name="pets">
               Ver más...
             </button>
@@ -174,11 +174,7 @@
               <p>#Fantasy</p>
               <img src="/assets/button3.svg" />
             </header>
-
-            <img
-              class="gif"
-              src="https://media1.giphy.com/media/d88tKlampLOqdCOnad/200.gif?cid=a09d884ac6f1bd8d4e64744a58169f0475e80e46248b3cbf&rid=200.gif"
-            />
+            <img id="fantasyCategory" class="gif" />
             <button class="button--blue button--seemore" name="fantasy">
               Ver más...
             </button>
@@ -188,11 +184,7 @@
               <p>#Anime</p>
               <img src="/assets/button3.svg" />
             </header>
-
-            <img
-              class="gif"
-              src="https://media3.giphy.com/media/tIZUToOMEFGM0/200.gif?cid=a09d884ae4e8f64daf299fae002b17947ab5754f415c2aa1&rid=200.gif"
-            />
+            <img id="animeCategory" class="gif" />
             <button class="button--blue button--seemore" name="shonen">
               Ver más...
             </button>
@@ -201,7 +193,7 @@
       </section>
 
       <section id="gifsresults">
-        <input id="gifsresultsinput" placeholder="Tendencias:" required />
+        <p class="sectiontitle" id="gifsresultstext">Tendencias</p>
         <div id="gifsresultsgrid" class="gifsgrid"></div>
       </section>
     </div>
