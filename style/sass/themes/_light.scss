@@ -1,6 +1,10 @@
+$lightcolor-primary: #2f333c;
 $pink: #f7c9f3;
-$lightpink: #fff4fd;
+$pinkbg: #fff4fd;
 $activepink: #e6bbe2;
+$color-windows: #e6e6e6;
+$color-windows-lighter: #f0f0f0;
+$color-windows-lighter-hover: #dbdbdb;
 $gradient-blue: #4d85f5;
 $gradient-pink: #f6c8f3;
 
@@ -11,8 +15,8 @@ $gradient-pink: #f6c8f3;
 }
 
 .light {
-  background-color: $lightpink;
-  color: $color-primary;
+  background-color: $pinkbg;
+  color: $lightcolor-primary;
 
   .welcome {
     @extend %gradient;
@@ -37,13 +41,19 @@ $gradient-pink: #f6c8f3;
     }
     &--suggested {
       background: $color-windows;
+      button {
+        background: $color-windows-lighter;
+      }
     }
   }
 
   .howtorecord,
-  .record {
+  .record,
+  .uploading,
+  .upload--done {
     background-color: $color-windows;
-    h2 {
+
+    header {
       @extend %gradient;
     }
   }
