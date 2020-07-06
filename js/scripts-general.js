@@ -7,11 +7,11 @@ document.addEventListener('DOMContentLoaded', async () => {
     if (bodyclass == 'light') {
       body.classList.remove('dark');
       body.classList.add('light');
-      logo.src = 'images/gifOF_logo.png';
+      logo.src = '/assets/gifOF_logo.webp';
     } else if (bodyclass == 'dark') {
       body.classList.remove('light');
       body.classList.add('dark');
-      logo.src = 'images/gifOF_logo_dark.png';
+      logo.src = '/assets/gifOF_logo_dark.webp';
     } else {
       body.classList.add('light');
     }
@@ -76,12 +76,10 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   lightbutton.addEventListener('click', () => {
     changeThemes('light', 'dark');
-    logo.src = 'images/gifOF_logo.png';
+    logo.src = '/assets/gifOF_logo.webp';
   });
   darkbutton.addEventListener('click', () => {
     changeThemes('dark', 'light');
-    logo.src = 'images/gifOF_logo_dark.png';
-
+    logo.src = '/assets/gifOF_logo_dark.webp';
   });
-
 });
