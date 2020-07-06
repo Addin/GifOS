@@ -45,6 +45,7 @@
     @extend %button;
     background-color: Transparent;
     @include box-shadow(0px, 0px, 0px, 1px, black);
+  
   }
 
   &--transparentsmall {
