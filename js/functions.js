@@ -1,4 +1,28 @@
 const API_KEY = 'YZfBJcINwzLE6Fy7ISxAjUgR1Ou4RJfi';
+const renderGifs = (gifs, container, search) => {
+  let template = '';
+
+  for (let gif of gifs) {
+    let classs = 'gif';
+
+    if (gif.images.original.width / gif.images.original.height >= 2) {
+      classs = 'giflarge';
+    } else {
+      classs = 'gif';
+    }
+
+    template += ` 
+   
+        <div class="gifcontainer">
+            <img class="${classs}" src="${gif.images.original.url}">      
+            <footer class="giftext">
+                <p>${getHashtags(gif, search)}</p>
+            </footer>
+        </div>
+        `;
+  }
+  container.innerHTML = template;
+};
 
 let getHashtags = (gif, search) => {
   let hashtags = '';
@@ -21,7 +45,9 @@ let getHashtags = (gif, search) => {
         .map((e) => `#${e}`)
         .join(' ');
     } else {
-      hashtags = `#${search}`;
+      if (search) {
+        hashtags = `#${search}`;
+      }
     }
   }
   return hashtags;
@@ -29,7 +55,7 @@ let getHashtags = (gif, search) => {
 
 const searchGifs = (searchValue, container) => {
   fetch(
-    'http://api.giphy.com/v1/gifs/search?q=' +
+    'https://api.giphy.com/v1/gifs/search?q=' +
       `${searchValue}` +
       '&api_key=' +
       API_KEY +
@@ -39,28 +65,6 @@ const searchGifs = (searchValue, container) => {
       return res.json();
     })
     .then((res) => {
-      console.log(res.data);
-
-      if (container) {
-        renderGifs(res.data, container, searchValue);
-      } else {
-        for (let gif of res.data) {
-        }
-      }
-    })
-    .catch((error) => {
-      console.log(error);
-    });
-};
-
-const TENDENCIES_URL = 'https://api.giphy.com/v1/gifs/trending?&limit=16';
-const getTendenciesGifs = (container) => {
-  fetch(TENDENCIES_URL + '&api_key=' + API_KEY)
-    .then((res) => {
-      return res.json();
-    })
-    .then((res) => {
-      console.log(res);
       renderGifs(res.data, container);
     })
     .catch((error) => {
@@ -68,8 +72,44 @@ const getTendenciesGifs = (container) => {
     });
 };
 
+const searchCategoryGifs = (searchValue, img) => {
+  fetch(
+    'https://api.giphy.com/v1/gifs/search?q=' +
+      `${searchValue}` +
+      '&api_key=' +
+      API_KEY +
+      '&limit=1'
+  )
+    .then((res) => {
+      return res.json();
+    })
+    .then((res) => {
+      console.log(res);
+      img.src = res.data[0].images.original.url;
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+};
+
+const TENDENCIES_URL = 'https://api.giphy.com/v1/gifs/trending?&limit=16';
+
+const getTendenciesGifs = (container) => {
+  fetch(TENDENCIES_URL + '&api_key=' + API_KEY)
+    .then((res) => {
+      return res.json();
+    })
+    .then((res) => {
+      renderGifs(res.data, container);
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+};
 localStorage.removeItem('searchString');
+
 let arrayString = [];
+
 const saveSearchs = (search) => {
   if (localStorage.getItem('searchString') == null) {
     arrayString.push(search);
@@ -93,12 +133,18 @@ const saveSearchs = (search) => {
   }
 };
 
+let stream = null;
+
 const getStream = async (video) => {
   let constraints = {
     audio: false,
-    video: true,
+    video: {
+      height: 400,
+      width: 750,
+    },
   };
-  navigator.mediaDevices
+
+  stream = navigator.mediaDevices
     .getUserMedia(constraints)
     .then(function (stream) {
       console.log('entro al stream');
@@ -111,12 +157,12 @@ const getStream = async (video) => {
 };
 
 let recorder = null;
-const funcionprueba = async (stream) => {
+
+const recordGif = async (stream) => {
   recorder = new RecordRTCPromisesHandler(stream, {
     type: 'gif',
     frameRate: 1,
     quality: 10,
-    width: 360,
     hidden: 240,
     onGifRecordingStarted: function () {
       console.log('started');
@@ -127,7 +173,6 @@ const funcionprueba = async (stream) => {
 };
 
 let arrayMyGIfs = [];
-
 const saveMyGyfs = (gifID) => {
   if (localStorage.getItem('arrayMyGifs') == null) {
     arrayMyGIfs.push(gifID);
@@ -144,15 +189,27 @@ const GIFBYID_URL = 'https://api.giphy.com/v1/gifs?';
 const getMyGifs = (container) => {
   let gifs = localStorage.getItem('arrayMyGifs');
 
-  fetch(GIFBYID_URL + 'api_key=' + API_KEY + '&ids=' + gifs)
-    .then((res) => {
-      return res.json();
-    })
-    .then((res) => {
-      console.log(res);
-      renderGifs(res.data, container, 'MyGifs');
-    })
-    .catch((error) => {
-      console.log(error);
-    });
+  if (gifs) {
+    fetch(GIFBYID_URL + 'api_key=' + API_KEY + '&ids=' + gifs)
+      .then((res) => {
+        return res.json();
+      })
+      .then((res) => {
+        renderGifs(res.data, container, 'MyGifs');
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  } else {
+    container.innerHTML = '';
+  }
+};
+
+const copyToClipboard = (text) => {
+  var hiddentextarea = document.createElement('textarea');
+  document.body.appendChild(hiddentextarea);
+  hiddentextarea.value = text;
+  hiddentextarea.select();
+  document.execCommand('copy');
+  document.body.removeChild(hiddentextarea);
 };
