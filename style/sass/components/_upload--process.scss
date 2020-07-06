@@ -1,0 +1,161 @@
+#uploadsection {
+  header {
+    display: flex;
+    justify-content: space-between;
+    padding-right: 10px;
+  }
+}
+
+.howtorecord {
+  max-width: 700px;
+
+  &--content {
+    margin: 30px;
+    display: flex;
+    align-items: flex-start;
+
+    img {
+      margin-right: 30px;
+      margin-top: 5px;
+    }
+
+    h3 {
+      font-weight: 1000;
+      margin-bottom: 10px;
+    }
+
+    p {
+      margin-bottom: 5px;
+    }
+  }
+
+  &--buttons {
+    padding: 0 30px 30px 30px;
+    display: flex;
+    justify-content: flex-end;
+
+    button {
+      margin-left: 20px;
+    }
+  }
+}
+
+.record {
+  display: none;
+  max-width: 775px;
+
+  &--content {
+    margin: 15px 10px 20px 10px;
+  }
+
+  &--image {
+    height: 410px;
+
+    video,
+    img {
+      border: 1.5px black solid;
+      border-bottom: 1.5px $color-windows-darkerborder solid;
+      border-right: 1.5px $color-windows-darkerborder solid;
+      outline: 1.5px solid white;
+      outline-offset: -3px;
+    }
+
+    .record--gifpreview {
+      display: none;
+      height: 400px;
+      width: 100%;
+    }
+  }
+
+  &--buttons {
+    margin-top: 20px;
+    text-align: right;
+    display: flex;
+    justify-content: space-between;
+
+    .record--counter {
+      display: none;
+      text-align: right;
+      padding: 5px;
+      width: 120px;
+      background-color: white;
+      border: 1px black solid;
+      border-bottom: 1.5px $color-windows solid;
+      border-right: 1.5px $color-windows solid;
+      @include box-shadow(0px, 0px, 0px, 1px, $color-windows-darkerborder);
+    }
+
+    .buttonicon {
+      width: 40px;
+    }
+
+    &--stop {
+      display: none;
+    }
+
+    &--upload {
+      display: none;
+
+      button {
+        width: 130px;
+      }
+    }
+  }
+}
+
+.uploading {
+  display: none;
+  max-width: 775px;
+
+  &--text {
+    height: 400px;
+    margin: 8px;
+    text-align: center;
+    background-color: white;
+    border: 1px black solid;
+    border-bottom: 1.5px $color-windows-darkerborder solid;
+    border-right: 1.5px $color-windows-darkerborder solid;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    h3 {
+      margin-bottom: 20px;
+    }
+  }
+
+  &--buttons {
+    margin: 20px;
+    text-align: right;
+  }
+}
+
+.upload--done {
+  max-width: 775px;
+  display: none;
+  &--content {
+    height: 200px;
+    margin: 40px;
+    display: flex;
+    justify-content: space-between;
+    img {
+      border: 1px black solid;
+      border-bottom: 1.5px $color-windows-darkerborder solid;
+      border-right: 1.5px $color-windows-darkerborder solid;
+    }
+    h3 {
+      margin-bottom: 10px;
+    }
+
+    button {
+      display: block;
+      width: 250px;
+      margin-bottom: 15px;
+    }
+  }
+
+  &--buttons {
+    margin: 40px;
+    text-align: right;
+  }
+}
