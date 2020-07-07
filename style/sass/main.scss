@@ -1,10 +1,10 @@
 @import 'abstracts/variables';
 
-@import 'themes/light', 'themes/dark';
-
 @import 'base/base', 'base/reset';
 
-@import 'components/buttons', 'components/record', 'components/suggested',
-  'components/upload--process', 'components/uploadgeneral';
+@import 'themes/light', 'themes/dark';
 
-@import 'layout/navigation', 'layout/grid', 'layout/search', 'layout/header';
+@import 'components/buttons', 'components/record', 'components/suggested',
+  'components/upload--general', 'components/upload--process';
+
+@import 'layout/grid', 'layout/header', 'layout/navigation', 'layout/search';
