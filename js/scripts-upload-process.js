@@ -3,7 +3,6 @@ document.addEventListener('DOMContentLoaded', async () => {
   let buttonstop = document.getElementById('record--buttonstop');
   let date = new Date();
   date.setHours(00, 00, 00);
-
   let buttonstart = document.getElementById('record--buttonstart');
   let divbuttonsstart = document.getElementById('record--buttons--start');
   let divbuttonsstop = document.getElementById('record--buttons--stop');
@@ -20,7 +19,7 @@ document.addEventListener('DOMContentLoaded', async () => {
       audio: false,
     });
     recordGif(stream);
-    recordtitle.innerText = 'Capturando tu gifo';
+    recordtitle.innerText = 'Capturando tu guifo';
 
     let countSeconds = setInterval(function () {
       let seconds = date.getSeconds();
@@ -38,6 +37,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   let gifpreview = document.getElementById('gifpreview');
   let video = document.getElementById('uploadvideo');
+
   let blob = null;
   let url = '';
 
@@ -55,8 +55,10 @@ document.addEventListener('DOMContentLoaded', async () => {
   });
 
   let buttonrepeat = document.getElementById('record--buttonrepeat');
+
   buttonrepeat.addEventListener('click', () => {
     recordtitle.innerText = 'Un chequeo antes de empezar';
+
     date.setHours(00, 00, 00);
     counter.innerHTML = '0:0:0';
     counter.style.display = 'none';
@@ -65,26 +67,25 @@ document.addEventListener('DOMContentLoaded', async () => {
     gifpreview.style.display = 'none';
     video.style.display = 'block';
   });
+
   let buttonupload = document.getElementById('record--buttonupload');
   let divuploading = document.getElementById('uploading');
   let recorddiv = document.getElementById('recorddiv');
   let divuploaddone = document.getElementById('upload--done');
   let gifpreviewsmall = document.getElementById('gifpreviewsmall');
+
   const UPLOAD_URL = 'https://upload.giphy.com/v1/gifs?api_key=' + API_KEY;
+
   buttonupload.addEventListener('click', () => {
     recorddiv.style.display = 'none';
     divuploading.style.display = 'block';
-
     let formData = new FormData();
     formData.append('file', blob, 'myGif.gif');
     console.log(formData.get('file'));
-
     var xhr = new XMLHttpRequest();
     xhr.open('POST', UPLOAD_URL, true);
     xhr.withCredentials = true;
-
     xhr.setRequestHeader('Access-Control-Allow-Origin', '*');
-
     xhr.onreadystatechange = function () {
       if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
         let gifObject = JSON.parse(xhr.response);

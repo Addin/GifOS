@@ -18,7 +18,6 @@ document.addEventListener('DOMContentLoaded', async () => {
   };
 
   activateThemes(bodyclass);
-
   logo.addEventListener('click', () => {
     window.location.assign('index.html');
   });
@@ -45,9 +44,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   const choosethemediv = document.getElementById('choosethemediv');
   const chooseThemeButtonA = document.getElementById('chooseThemeButtonA');
   const chooseThemeButtonB = document.getElementById('chooseThemeButtonB');
-
   const themesdiv = document.getElementById('themesdiv');
-
   choosethemediv.addEventListener('click', () => {
     if (chooseThemeButtonA.classList.contains('button--primaryactive')) {
       chooseThemeButtonA.classList.remove('button--primaryactive');
@@ -63,17 +60,14 @@ document.addEventListener('DOMContentLoaded', async () => {
   const changeThemes = (themeToAdd, themeToRemove) => {
     body.classList.remove(`${themeToRemove}`);
     body.classList.add(`${themeToAdd}`);
-
     themesdiv.style.display = 'none';
     chooseThemeButtonA.classList.remove('button--primaryactive');
     chooseThemeButtonB.classList.remove('button--primaryactive');
-
     sessionStorage.setItem('bodyclass', `${themeToAdd}`);
   };
 
   const lightbutton = document.getElementById('light-theme-button');
   const darkbutton = document.getElementById('dark-theme-button');
-
   lightbutton.addEventListener('click', () => {
     changeThemes('light', 'dark');
     logo.src = '/assets/gifOF_logo.webp';

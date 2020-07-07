@@ -93,7 +93,6 @@ const searchCategoryGifs = (searchValue, img) => {
 };
 
 const TENDENCIES_URL = 'https://api.giphy.com/v1/gifs/trending?&limit=16';
-
 const getTendenciesGifs = (container) => {
   fetch(TENDENCIES_URL + '&api_key=' + API_KEY)
     .then((res) => {
@@ -107,9 +106,7 @@ const getTendenciesGifs = (container) => {
     });
 };
 localStorage.removeItem('searchString');
-
 let arrayString = [];
-
 const saveSearchs = (search) => {
   if (localStorage.getItem('searchString') == null) {
     arrayString.push(search);
@@ -125,7 +122,6 @@ const saveSearchs = (search) => {
   }
 
   localStorage.setItem('searchString', arrayString.join());
-
   for (let i = 0; i < arrayString.length; i++) {
     let button = document.getElementById(`searchresult${i}`);
     button.childNodes[0].nodeValue = `${arrayString[i]}`;
@@ -134,7 +130,6 @@ const saveSearchs = (search) => {
 };
 
 let stream = null;
-
 const getStream = async (video) => {
   let constraints = {
     audio: false,
@@ -147,26 +142,20 @@ const getStream = async (video) => {
   stream = navigator.mediaDevices
     .getUserMedia(constraints)
     .then(function (stream) {
-      console.log('entro al stream');
       video.srcObject = stream;
       video.play();
     })
-    .catch(function (err) {
-      console.log('no entro' + err);
-    });
+    .catch(function (err) {});
 };
 
 let recorder = null;
-
 const recordGif = async (stream) => {
   recorder = new RecordRTCPromisesHandler(stream, {
     type: 'gif',
     frameRate: 1,
     quality: 10,
     hidden: 240,
-    onGifRecordingStarted: function () {
-      console.log('started');
-    },
+    onGifRecordingStarted: function () {},
   });
 
   recorder.startRecording();
@@ -185,7 +174,6 @@ const saveMyGyfs = (gifID) => {
 };
 
 const GIFBYID_URL = 'https://api.giphy.com/v1/gifs?';
-
 const getMyGifs = (container) => {
   let gifs = localStorage.getItem('arrayMyGifs');
 

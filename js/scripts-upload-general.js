@@ -15,12 +15,9 @@ document.addEventListener('DOMContentLoaded', async () => {
   });
 
   let mygifssection = document.getElementById('gifsresults');
-
   let continuebutton = document.getElementById('howtorecord--continue');
   let howtorecorddiv = document.getElementById('howtorecorddiv');
-
   let recorddiv = document.getElementById('recorddiv');
-
   let video = document.getElementById('uploadvideo');
 
   continuebutton.addEventListener('click', () => {

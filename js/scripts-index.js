@@ -1,6 +1,5 @@
 document.addEventListener('DOMContentLoaded', async () => {
   const gifresultsgrid = document.getElementById('gifsresultsgrid');
-
   getTendenciesGifs(gifresultsgrid);
 
   let searchInput = document.getElementById('search--input');
@@ -29,7 +28,6 @@ document.addEventListener('DOMContentLoaded', async () => {
   });
 
   let searchButtons = document.getElementsByClassName('searchButtons');
-
   Array.from(searchButtons).forEach((element) => {
     element.addEventListener('click', () => {
       gifsresultstext.innerText = element.textContent;
@@ -38,8 +36,8 @@ document.addEventListener('DOMContentLoaded', async () => {
       gifsresults.scrollIntoView();
     });
   });
-  let buttonicon = document.getElementById('buttonicon');
 
+  let buttonicon = document.getElementById('buttonicon');
   searchInput.addEventListener('keyup', () => {
     if (searchInput.value.trim() != '') {
       searchButton.removeAttribute('disabled');
@@ -68,8 +66,8 @@ document.addEventListener('DOMContentLoaded', async () => {
   let fantasyCategory = document.getElementById('fantasyCategory');
   let animeCategory = document.getElementById('animeCategory');
 
-  searchCategoryGifs('Star Lord', superheroesCategory);
-  searchCategoryGifs('Cats', petsCategory);
-  searchCategoryGifs('Witcher fight', fantasyCategory);
-  searchCategoryGifs('Luffi One Piece', animeCategory);
+  searchCategoryGifs('star lord', superheroesCategory);
+  searchCategoryGifs('cats', petsCategory);
+  searchCategoryGifs('witcher fight', fantasyCategory);
+  searchCategoryGifs('luffi one piece', animeCategory);
 });
