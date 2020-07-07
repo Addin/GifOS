@@ -603,3 +603,28 @@ input {
       width: auto;
       margin-right: 10px;
       margin-left: 2px; }
+
+#suggested,
+#gifsresults {
+  text-align: center; }
+
+#suggested {
+  margin-top: 100px; }
+
+#gifsresults {
+  margin-top: 40px;
+  padding-top: 20px;
+  margin-bottom: 50px; }
+
+.sectiontitle {
+  text-align: left;
+  padding-left: 5px;
+  width: 99%;
+  height: 30px;
+  border: 1.5px #818181 solid;
+  border-bottom: 1.5px #e6e6e6 solid;
+  border-right: 1.5px #e6e6e6 solid;
+  -webkit-box-shadow: 0px 0px 0px 1.5px #f7c9f3;
+  -moz-box-shadow: 0px 0px 0px 1.5px #f7c9f3;
+  -ms-box-shadow: 0px 0px 0px 1.5px #f7c9f3;
+  box-shadow: 0px 0px 0px 1.5px #f7c9f3; }

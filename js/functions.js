@@ -84,7 +84,6 @@ const searchCategoryGifs = (searchValue, img) => {
       return res.json();
     })
     .then((res) => {
-      console.log(res);
       img.src = res.data[0].images.original.url;
     })
     .catch((error) => {
