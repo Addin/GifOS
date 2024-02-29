@@ -84,7 +84,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     console.log(formData.get('file'));
     var xhr = new XMLHttpRequest();
     xhr.open('POST', UPLOAD_URL, true);
-    xhr.withCredentials = true;
+    xhr.withCredentials = false;
     xhr.setRequestHeader('Access-Control-Allow-Origin', '*');
     xhr.onreadystatechange = function () {
       if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
