@@ -75,31 +75,35 @@ document.addEventListener('DOMContentLoaded', async () => {
   let gifpreviewsmall = document.getElementById('gifpreviewsmall');
 
   const UPLOAD_URL = 'https://upload.giphy.com/v1/gifs?api_key=' + API_KEY;
+  console.log(UPLOAD_URL);
+  console.log(API_KEY);
 
-  buttonupload.addEventListener('click', () => {
+  buttonupload.addEventListener('click', async () => {
     recorddiv.style.display = 'none';
     divuploading.style.display = 'block';
-    let formData = new FormData();
-    formData.append('file', blob, 'myGif.gif');
-    console.log(formData.get('file'));
-    var xhr = new XMLHttpRequest();
-    xhr.open('POST', UPLOAD_URL, true);
-    xhr.withCredentials = false;
-    xhr.setRequestHeader('Access-Control-Allow-Origin', '*');
-    xhr.onreadystatechange = function () {
-      if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
-        let gifObject = JSON.parse(xhr.response);
-        saveMyGyfs(gifObject.data.id);
-        divuploading.style.display = 'none';
-        divuploaddone.style.display = 'block';
-        gifpreviewsmall.src = url;
-      }
-    };
 
     try {
-      xhr.send(formData);
-    } catch (e) {
-      alert(' Error al enviar el gif: ' + e);
+      const formData = new FormData();
+      formData.append('file', blob, 'myGif.gif');
+
+      const response = await fetch(UPLOAD_URL, {
+        method: 'POST',
+        body: formData,
+      });
+
+      if (!response.ok) {
+        throw new Error('Error al enviar el GIF: ' + response.statusText);
+      }
+
+      const gifObject = await response.json();
+      saveMyGyfs(gifObject.data.id);
+
+      divuploading.style.display = 'none';
+      divuploaddone.style.display = 'block';
+      gifpreviewsmall.src = url;
+    } catch (error) {
+      console.error('Error al enviar el GIF:', error);
+      alert('Error al enviar el GIF: ' + error.message);
     }
   });
 

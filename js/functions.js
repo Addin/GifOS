@@ -1,4 +1,4 @@
-const API_KEY = 'YZfBJcINwzLE6Fy7ISxAjUgR1Ou4RJfi';
+const API_KEY = "YZfBJcINwzLE6Fy7ISxAjUgR1Ou4RJfi";
 const renderGifs = (gifs, container, search) => {
   let template = '';
 
