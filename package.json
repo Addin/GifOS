@@ -4,7 +4,8 @@
   "description": "Second Acamica project",
   "main": "index.js",
   "scripts": {
-    "compile:sass": "node-sass style/sass/main.scss style/css/style.css -w"
+    "compile:sass": "node-sass style/sass/main.scss style/css/style.css -w",
+    "start": "parcel index.html"
   },
   "repository": {
     "type": "git",
@@ -17,6 +18,8 @@
   },
   "homepage": "https://github.com/Addin/GifOS#readme",
   "devDependencies": {
-    "node-sass": ">=7.0.0"
+    "node-sass": "9.0.0",
+    "parcel": "^2.12.0",
+    "sass": "^1.71.1"
   }
 }
